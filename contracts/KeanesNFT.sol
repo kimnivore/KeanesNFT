@@ -2,10 +2,10 @@
 
 pragma solidity ^0.8.1;
 
-import "hardhat/console.sol";
+
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-
+import "hardhat/console.sol";
 
 contract KeanesNFT is ERC721URIStorage {
 
@@ -13,7 +13,7 @@ contract KeanesNFT is ERC721URIStorage {
     Counters.Counter private _tokenIds;
 
     constructor() ERC721 ('SquareNFT', 'Square') {
-        console.log('MY NFT CONTRACT!');
+        console.log("Keane's first NFT CONTRACT!");
     }
 
     function makeAnEpicNFT() public {
@@ -21,7 +21,8 @@ contract KeanesNFT is ERC721URIStorage {
 
         _safeMint(msg.sender, newItemId);
 
-        _setTokenURI(newItemId, 'blah');
+        _setTokenURI(newItemId, "https://jsonkeeper.com/b/ZATG");
+        console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);
 
         _tokenIds.increment();
     }
