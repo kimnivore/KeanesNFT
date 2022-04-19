@@ -20,6 +20,8 @@ contract KeanesNFT is ERC721URIStorage {
     string[] secondWords = ["NoodleSoup", "GarlicNoodles", "IceCream", "Cookies", "FriedChicken", "Fries", "Rice", "Karaage", "Candy", "Cheese", "Baguette", "Pizza", "Popsicles", "Lemonade", "Strawberries"];
     string[] thirdWords = ["Kirby", "Daroach", "DarkMetaKnight", "KingDedede", "BandanaWaddleDee", "Bugzzy", "Chirby", "KnuckleJoe", "Vividria", "Magolor", "ChefKawasaki", "Magolor", "PoppyBrosJr", "Plugg", "Chilly"];
 
+    event NewEpicNFTMinted(address sender, uint256 tokenId);
+
     constructor() ERC721 ('KEANExKIRBY', 'Kirby') {
         console.log("KeanexKirby NFT Contract");
     }
@@ -91,5 +93,7 @@ contract KeanesNFT is ERC721URIStorage {
         
         _tokenIds.increment();
         console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);
+
+        emit NewEpicNFTMinted(msg.sender, newItemId);
     }
 }
