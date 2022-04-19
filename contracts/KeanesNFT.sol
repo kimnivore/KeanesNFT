@@ -7,16 +7,19 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "hardhat/console.sol";
 
+import { Base64 } from "./libraries/Base64.sol";
+
 contract KeanesNFT is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
+
     string baseSVG = "<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMinYMin meet' viewBox='0 0 350 350'><style>.base { fill: black; font-family: serif; font-size: 24px; }</style><rect width='100%' height='100%' fill='pink' /><text x='50%' y='50%' class='base' dominant-baseline='middle' text-anchor='middle'>";
 
     string[] firstWords = ["Silly", "Funny", "Fantastic", "Jolly", "Cranky", "Spooky", "Awesome", "Zany", "Kookie", "Terrible", "Epic", "Hilarious", "Amazing", "Magnificent", "Grumpy"];
     string[] secondWords = ["NoodleSoup", "GarlicNoodles", "IceCream", "Cookies", "FriedChicken", "Fries", "Rice", "Karaage", "Candy", "Cheese", "Baguette", "Pizza", "Popsicles", "Lemonade", "Strawberries"];
     string[] thirdWords = ["Kirby", "Daroach", "DarkMetaKnight", "KingDedede", "BandanaWaddleDee", "Bugzzy", "Chirby", "KnuckleJoe", "Vividria", "Magolor", "ChefKawasaki", "Magolor", "PoppyBrosJr", "Plugg", "Chilly"];
 
-    constructor() ERC721 ('SquareNFT', 'Square') {
+    constructor() ERC721 ('KEANExKIRBY', 'Kirby') {
         console.log("Keane's first NFT CONTRACT!");
     }
 
