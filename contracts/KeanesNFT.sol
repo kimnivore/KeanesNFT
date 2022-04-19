@@ -20,7 +20,7 @@ contract KeanesNFT is ERC721URIStorage {
     string[] thirdWords = ["Kirby", "Daroach", "DarkMetaKnight", "KingDedede", "BandanaWaddleDee", "Bugzzy", "Chirby", "KnuckleJoe", "Vividria", "Magolor", "ChefKawasaki", "Magolor", "PoppyBrosJr", "Plugg", "Chilly"];
 
     constructor() ERC721 ('KEANExKIRBY', 'Kirby') {
-        console.log("Keane's first NFT CONTRACT!");
+        console.log("KeanexKirby NFT Contract");
     }
 
     function pickRandomFirstWord(uint256 tokenId) public view returns (string memory) {
@@ -51,15 +51,35 @@ contract KeanesNFT is ERC721URIStorage {
         string memory first = pickRandomFirstWord(newItemId);
         string memory second = pickRandomSecondWord(newItemId);
         string memory third = pickRandomThirdWord(newItemId);
+        string memory combinedWord = string(abi.encodePacked(first, second, third));
 
-        string memory finalSvg = string(abi.encodePacked(baseSVG, first, second, third, "</text></svg>"));
+        string memory finalSvg = string(abi.encodePacked(baseSVG, combinedWord, "</text></svg>"));
+
+        string memory json = Base64.encode(
+            bytes(
+                string(
+                    abi.encodePacked(
+                        '{"name": "',
+                        combinedWord,
+                        '", "description": "A collection of Kirby words.", "image": "data:image/svg+xml;base64,',
+                        Base64.encode(bytes(finalSvg)),
+                        '"}'
+                    )
+                )
+            )
+        );
+
+        string memory finalTokenUri = string(
+            abi.encodePacked("data:application/json;base64,", json)
+        );
+
         console.log("\n-----------------");
-        console.log(finalSvg);
+        console.log(finalTokenUri);
         console.log("-----------------\n");
 
         _safeMint(msg.sender, newItemId);
 
-        _setTokenURI(newItemId, "https://jsonkeeper.com/b/ZATG");
+        _setTokenURI(newItemId, finalTokenUri);
         
         _tokenIds.increment();
         console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);

@@ -6,7 +6,7 @@ library Base64 {
           "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     
     function encode(bytes memory data) internal pure returns (string memory) {
-        unit256 len = data.length;
+        uint256 len = data.length;
         if (len == 0) return "";
 
         uint256 encodedLen = 4 * ((len + 2) / 3);
