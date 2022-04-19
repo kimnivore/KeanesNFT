@@ -58,6 +58,10 @@ contract KeanesNFT is ERC721URIStorage {
         return uint256(keccak256(abi.encodePacked(input)));
     }
 
+    function getTotalNFTsMintedSoFar() public view returns (uint256) {
+        return _tokenIds.current();
+    }
+
     function makeAnEpicNFT() public {
         uint256 newItemId = _tokenIds.current();
 

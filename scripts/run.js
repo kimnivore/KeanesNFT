@@ -11,6 +11,8 @@ const main = async () => {
     //Mint another NFT
     txn = await nftContract.makeAnEpicNFT()
     await txn.wait()
+
+    let mint_count = await nftContract.getTotalNFTsMintedSoFar();
 };
 
 const runMain = async () => {
