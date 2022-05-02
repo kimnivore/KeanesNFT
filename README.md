@@ -1,15 +1,8 @@
-# Basic Sample Hardhat Project
+1. Run `npm install` at the root of your directory
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-Try running some of the following tasks:
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+To change contract:
+    1. redeploy - npx hardhat run scripts/deploy.js --network rinkeby
+    2. update contract address on frontend file
+    3. update abi file on frontend utils file

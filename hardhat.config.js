@@ -6,8 +6,6 @@ require('dotenv').config();
 module.exports = {
   solidity: '0.8.1',
   etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
     apiKey: process.env.ETHERSCAN_APIKEY
   },
   networks: {
@@ -22,4 +20,3 @@ module.exports = {
     },
   },
 };
-
