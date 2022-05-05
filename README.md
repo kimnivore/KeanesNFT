@@ -1,10 +1,6 @@
-
-
-
-
 # Keane x Kirby NFT Collection
 
-This is a smart contract application that will allow users to mint a unique Keane x Kirby related NFT and view a gallery of Kirby related art. 
+This is a smart contract application connected to a frontend React application, which will allow users to mint a unique Keane x Kirby related NFT and view a gallery of Kirby related art. 
 
 ![Keane Chalk Art](https://github.com/kimnivore/keanes_nft_fe/blob/main/src/assets/KeanesArt.png?raw=true)
 
