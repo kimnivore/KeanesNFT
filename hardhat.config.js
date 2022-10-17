@@ -9,9 +9,9 @@ module.exports = {
     apiKey: process.env.ETHERSCAN_APIKEY
   },
   networks: {
-    rinkeby: {
-      url: process.env.STAGING_ALCHEMY_KEY,
-      accounts: [process.env.RINKEBY_PRIVATE_KEY],
+    goerli: {
+      url: process.env.QUICKNODE_API_KEY_URL,
+      accounts: [process.env.GOERLI_PRIVATE_KEY],
     },
     mainnet: {
       chainId: 1,
