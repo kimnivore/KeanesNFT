@@ -4,7 +4,7 @@ require('dotenv').config({ path: ".env" });
 
 
 module.exports = {
-  solidity: '0.8.4',
+  solidity: '0.8.17',
   etherscan: {
     apiKey: process.env.ETHERSCAN_APIKEY
   },
